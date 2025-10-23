@@ -77,6 +77,7 @@ class LogMonitorWidget(QWidget):
 
         # --- Position : coin supérieur droit ---
         screen_geometry = QApplication.primaryScreen().geometry()
+        print(screen_geometry)
         self.move(screen_geometry.width() - self.width() - 20, 20)
 
         # --- Watchdog ---
@@ -135,7 +136,7 @@ def main():
     import signal
     signal.signal(signal.SIGINT, signal.SIG_DFL)  # pour Ctrl+C dans le terminal
 
-    log_file = const.LOG_FILE  # ou ton chemin spécifique
+    log_file = '/Users/robin/DEV/lxpanel-logtracker/logs/lsyncd.log'  # ou ton chemin spécifique
     app = QApplication(sys.argv)
     widget = LogMonitorWidget(log_file)
     widget.show()

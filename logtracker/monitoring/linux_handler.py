@@ -5,8 +5,8 @@ from pathlib import Path
 
 import gi
 gi.require_version('Gtk', '3.0')
-gi.require_version('AppIndicator3', '0.1')
-from gi.repository import Gtk, AppIndicator3, GLib
+gi.require_version('AyatanaAppIndicator3', '0.1')
+from gi.repository import Gtk, AyatanaAppIndicator3, GLib
 
 from watchdog.observers import Observer
 from logtracker.watcher import LsyncdLogWatcher
@@ -16,12 +16,12 @@ from logtracker import const
 class RaspbianAppIndicator:
     def __init__(self, log_file):
         self.log_file = log_file
-        self.indicator = AppIndicator3.Indicator.new(
+        self.indicator = AyatanaAppIndicator3.Indicator.new(
             "LogMon",
             const.ICON_IDLE,
-            AppIndicator3.IndicatorCategory.APPLICATION_STATUS
+            AyatanaAppIndicator3.IndicatorCategory.APPLICATION_STATUS
         )
-        self.indicator.set_status(AppIndicator3.IndicatorStatus.ACTIVE)
+        self.indicator.set_status(AyatanaAppIndicator3.IndicatorStatus.ACTIVE)
 
         # Menu
         menu = Gtk.Menu()
@@ -80,8 +80,3 @@ class RaspbianAppIndicator:
 
     def run(self):
         Gtk.main()
-
-
-if __name__ == "__main__":
-    app = RaspbianAppIndicator("/path/to/your/logfile.log")
-    app.run()

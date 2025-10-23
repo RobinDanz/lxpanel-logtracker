@@ -11,6 +11,8 @@ class LsyncdLogWatcher(FileSystemEventHandler):
         if event.src_path != self.log_file:
             return
 
+        print('modified')
+        
         with open(self.log_file, "r") as f:
             f.seek(self._position)
             new_lines = f.readlines()

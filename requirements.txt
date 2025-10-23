@@ -1,7 +1,7 @@
+pillow==12.0.0
+pyobjc-core==12.0
+pyobjc-framework-Cocoa==12.0
+pyobjc-framework-Quartz==12.0
+pystray==0.19.5
+six==1.17.0
 watchdog==6.0.0
-
-# Linux / Raspberry Pi
-pyinotify; sys_platform == "linux"
-
-# macOS
-rumps; sys_platform == "darwin"

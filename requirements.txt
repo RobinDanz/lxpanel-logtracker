@@ -1,0 +1,7 @@
+watchdog==6.0.0
+
+# Linux / Raspberry Pi
+pyinotify; sys_platform == "linux"
+
+# macOS
+rumps; sys_platform == "darwin"

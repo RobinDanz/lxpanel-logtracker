@@ -1,0 +1,14 @@
+services:
+  lsyncd:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lsyncd
+    restart: unless-stopped
+    volumes:
+      - /Users/robin/Documents/source:/source
+      - /Users/robin/Documents/target:/target
+      - ./logs:/logs
+      - ./lsyncd.conf.lua:/etc/lsyncd/lsyncd.conf.lua:ro
+    tty: true
+    command: ["lsyncd", "-nodaemon", "/etc/lsyncd/lsyncd.conf.lua"]

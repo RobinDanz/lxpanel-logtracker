@@ -3,8 +3,8 @@ import importlib
 
 class HandlerFactory:
     CLASS_MAP = {
-        'darwin': 'logtracker.monitoring.darwin_handler.MacOSHandler',
-        'linux': 'logtracker.monitoring.linux_handler.LinuxLogMonitorApp'
+        'darwin': 'logtracker.monitoring.darwin_handler.MacOSMonitorApp',
+        'linux': 'logtracker.monitoring.linux_handler.RaspbianAppIndicator'
     }
     
     @classmethod
